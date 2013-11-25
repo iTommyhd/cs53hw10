@@ -7,10 +7,12 @@ using namespace std;
 
 int main()
 {
+  srand(time(NULL));
   business MoesBar, ComicBookStore;
   customer ArrayCustomers[NUMBER_CUSTOMERS];
   string TempName;
   string TempInclination;
+  int IndexVictum;
 
   ifstream fin;
   fin.open("customers.dat");
@@ -46,7 +48,21 @@ int main()
   ComicBookStore.sell_stuff();
   MoesBar.customers_leave(ArrayCustomers,NUMBER_CUSTOMERS);
   ComicBookStore.customers_leave(ArrayCustomers,NUMBER_CUSTOMERS);
+  for(int i = 0;i<NUMBER_CUSTOMERS;i++)
+  {
+    IndexVictum = rand()%(NUMBER_CUSTOMERS+1);
+	if(ArrayCustomers[i].GetInclination() == ArrayCustomers[IndexVictum].GetInclination())
+	{
+		ArrayCustomers[i].rob(ArrayCustomers[IndexVictum]); // possibly incomplete-check
+	}
 
-  cin >> TempInclination;
-  return(0); //  Here just as a pause, deleted before code submitted
+	else
+	{
+	  ArrayCustomers[i].Throw(ArrayCustomers[IndexVictum]); // possibly incomplete - check
+	}
+  }
+
+
+  cin >> TempInclination;  //  This is just as a pause, delete before submition
+  return(0); 
 }
