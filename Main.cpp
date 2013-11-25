@@ -35,13 +35,18 @@ int main()
   {
     if(ArrayCustomers[i].GetInclination() == 1)
 	{
-	  ComicBookStore.enter_customer(ArrayCustomers[i]);
+	  ComicBookStore.addCustomer(ArrayCustomers[i]);
 	}
 	if(ArrayCustomers[i].GetInclination() == -1)
 	{
-		MoesBar.enter_customer(ArrayCustomers[i]);
+		MoesBar.addCustomer(ArrayCustomers[i]);
 	}
   }
+  MoesBar.sell_stuff();
+  ComicBookStore.sell_stuff();
+  MoesBar.customers_leave(ArrayCustomers,NUMBER_CUSTOMERS);
+  ComicBookStore.customers_leave(ArrayCustomers,NUMBER_CUSTOMERS);
+
   cin >> TempInclination;
-  return(0);
+  return(0); //  Here just as a pause, deleted before code submitted
 }
