@@ -13,6 +13,8 @@ int main()
   string TempName;
   string TempInclination;
   int IndexVictum;
+  int NumberCustomers = NUMBER_CUSTOMERS;
+  int Cycles = 0;
 
   ifstream fin;
   fin.open("customers.dat");
@@ -31,38 +33,66 @@ int main()
 	
   }
   fin.close();
-  
-  // Enters the customers into their appropriate stores 
-  for(int i = 0; i < NUMBER_CUSTOMERS;i++)
+
+  while(Cycles <= MAX_CYCLES && NumberCustomers > 1)
   {
-    if(ArrayCustomers[i].GetInclination() == 1)
+    // Enters the customers into their appropriate stores
+	// Should check to determine if people should leave in 
+	cout << "The current state of the town is:" << endl;
+	for(int i = 0; i < NumberCustomers;i++)
 	{
-	  ComicBookStore.addCustomer(ArrayCustomers[i]);
+	  cout << ArrayCustomers[i] << endl;
 	}
-	if(ArrayCustomers[i].GetInclination() == -1)
-	{
-		MoesBar.addCustomer(ArrayCustomers[i]);
-	}
+	for(int i = 0; i < NumberCustomers;i++)
+    {
+	  if(ArrayCustomers[i].GetInclination() == 1 && 
+        ArrayCustomers[i].GetHappiness() < MAX_HAPPINESS &&
+        ArrayCustomers[i].GetHappiness() > MIN_HAPPINESS)
+	  {
+	    ComicBookStore.addCustomer(ArrayCustomers[i]);
+	  }
+	  if(ArrayCustomers[i].GetInclination() == -1 && 
+		  ArrayCustomers[i].GetHappiness() < MAX_HAPPINESS && 
+		  ArrayCustomers[i].GetHappiness() > MIN_HAPPINESS)
+	  {
+        MoesBar.addCustomer(ArrayCustomers[i]);
+      }
+	  else
+	  {
+	    cout << ArrayCustomers[i].get_name() << "Has made it to ShelbyVille"
+        <<" on round " << Cycles << "."<< endl;
+	  }
+    }
+    // Sells items to customers
+	MoesBar.sell_stuff();
+    ComicBookStore.sell_stuff();
+
+	// Customers leave bars and mingles in streets
+    MoesBar.customers_leave(ArrayCustomers,NumberCustomers);
+    ComicBookStore.customers_leave(ArrayCustomers,NumberCustomers);
+    
+	// Simulates the robbing and throwing 
+	// all happiness modifications should be done in functions
+	for(int i = 0;i<NUMBER_CUSTOMERS;i++)
+    {
+      IndexVictum = rand()%(NUMBER_CUSTOMERS+1);
+	  if(ArrayCustomers[i].GetInclination() == ArrayCustomers[IndexVictum].GetInclination())
+	  {
+        ArrayCustomers[i].rob(ArrayCustomers[IndexVictum]); // possibly incomplete-check
+	  }
+
+	  else
+	  {
+	    ArrayCustomers[i].Throw(ArrayCustomers[IndexVictum]); // possibly incomplete - check
+	  }
+    }
   }
-  MoesBar.sell_stuff();
-  ComicBookStore.sell_stuff();
-  MoesBar.customers_leave(ArrayCustomers,NUMBER_CUSTOMERS);
-  ComicBookStore.customers_leave(ArrayCustomers,NUMBER_CUSTOMERS);
-  for(int i = 0;i<NUMBER_CUSTOMERS;i++)
+  cout << "The winner(s) of living in springfield are!!!!!!  " << endl
+	  << "***LOTS OF DRUMROLLS AND FIREEWORKS AND OTHER COOL STUFF***" << endl;
+  for (int i = 0; i < NumberCustomers;i++)
   {
-    IndexVictum = rand()%(NUMBER_CUSTOMERS+1);
-	if(ArrayCustomers[i].GetInclination() == ArrayCustomers[IndexVictum].GetInclination())
-	{
-		ArrayCustomers[i].rob(ArrayCustomers[IndexVictum]); // possibly incomplete-check
-	}
-
-	else
-	{
-	  ArrayCustomers[i].Throw(ArrayCustomers[IndexVictum]); // possibly incomplete - check
-	}
+    cout << ArrayCustomers[i] << endl;
   }
-
-
   cin >> TempInclination;  //  This is just as a pause, delete before submition
   return(0); 
 }
