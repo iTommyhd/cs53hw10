@@ -12,6 +12,15 @@
 #include <iostream>
 using namespace std;
 
+const int NUMBER_ITEMS_IN_STORE = 10;
+const int NUMBER_CUSTOMERS_IN_STORE=10;
+
+struct Product
+{
+  string m_name;
+  float m_price;
+};
+
 class business
 {
   private:
@@ -19,8 +28,8 @@ class business
     float total_cash; //amount of cash in register 
     short int num_items;
     short int num_customers;
-    string items[10]; // array containing items the business offers 
-	customer customers[10]; // customers in bussiness currently
+	Product items[NUMBER_ITEMS_IN_STORE]; // array containing items in business
+	customer customers[NUMBER_CUSTOMERS_IN_STORE]; // customers in bussiness
 
   public:
     business():business_name(),total_cash(0),num_items(0),num_customers(0) 
@@ -35,18 +44,15 @@ class business
 	  total_cash = money_in_reg;
 	  num_customers = 0;
 	  num_items = 7;
-	  string stock [7] = { "item 1","item2","item3","item4","item5",
-		                   "item6","item7"};
-	  get_item(items,stock,num_items);	
+	  
 	}
 		
 	void print();
 	int get_numcust(){return num_customers;};
-	void enter_customer(customer name_of_cust);
+	void addCustomer(customer name_of_cust);
 	void make_a_sale();
 	customer leave_store(int index){return customers[index];}
-	void get_item(string item[],string stock[],short num_items);
-		
+	void get_items(string FileName);
 
   };
 

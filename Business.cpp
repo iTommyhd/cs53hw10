@@ -7,6 +7,7 @@
 #include "Business.h"
 #include "Customer.h"
 #include <iostream>
+#include <fstream>
 using namespace std;
 
   void business::print()
@@ -29,13 +30,13 @@ using namespace std;
 	   
 	   for (int i =0 ;i<num_items;i++)
 	   {
-		   cout << items [i] << " ,";
+		   cout << items [i].m_name << " ,";
 	   };
 	   cout <<endl;
 	   cout<<"Cash in Register: $"<<total_cash<<endl;
 	   cout<<"---------------------------------------------------------"<<endl;
    }
-  void business::enter_customer(customer name_of_cust)
+  void business::addCustomer(customer name_of_cust)
    {
 	   
 	   customers[num_customers]=name_of_cust; 
@@ -63,10 +64,15 @@ using namespace std;
   
 	  }
 	}
-  void business::get_item(string item[],string stock[],short num_items)
+  void business::get_items(string FileName)
   {
-	  for (int i=0;i<num_items;i++)
-			{item[i]= stock[i];}
-	  return;
+	ifstream fin;
+	fin.open(FileName);
+    for (int i=0;i<num_items;i++)
+	{
+	  fin >> items[i].m_price;
+	  
+	}
+    return;
   }
    
