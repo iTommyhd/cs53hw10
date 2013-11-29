@@ -14,21 +14,12 @@
 using namespace std;
 
   const int  SINGLE_PURCHASE_COST = 40; //fix amount for transaction cost
-  struct product
-  {
-	product():name(),happiness(),inclination(),price(SINGLE_PURCHASE_COST){}
-	string name; // name of product
-	int happiness;  //level of happiness
-	string inclination; //(location)
-	int price; // price of item
-	
-	//Desc: Print information
-	//Pre: None 
-	//Post: Ouput name, happiness ,inclitnation, price 
-	void print(); 
-  };
- 
 
+  struct Product
+  {
+	  string m_name;
+	  float m_price;
+  };
   class customer
   {
    public:
@@ -52,7 +43,7 @@ using namespace std;
    // Desc: add item in to customer's purchased array 
    // Pre:  none
    // Post: return true if sucessful and add item or false if not  
-   bool buy_something(product items[] );
+   bool buy_something(Product items[] );
    //Desc: gets wallet balance from customer 
    //Pre: none 
    //Post: return float of blance in wallet 
@@ -83,7 +74,7 @@ using namespace std;
    string GetInclination() {return inclination;}
 
    private:
-	 product purchases [20]; // array for customer purchases 
+	 Product purchases [20]; // array for customer purchases 
 	 short total_purchases;  // total number of purchases 
 	 float wallet;           // balance 
 	 string customer_name;   // name 

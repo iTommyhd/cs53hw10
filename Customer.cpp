@@ -8,14 +8,14 @@
 #include <iostream>
 using namespace std;
 
-bool customer::buy_something (product items[])
+bool customer::buy_something (Product items[])
     {
 	 int purchase = (rand() % 2 + 1 ); // 50/50 chance for purchase   
 	 bool willPurchase;  
 	 int index = get_purchases(); //current purchases total to start in the array
 	 int item_purchase = (rand() % 10 ); // randomly chooses item from 0 to 10 
 	 int happiness; // happiness increase or decrease switch case 
-	 product temp_item;
+	 Product temp_item;
 	 
 	 switch (purchase) 
 	 {
@@ -58,7 +58,7 @@ bool customer::buy_something (product items[])
 
   void customer::print ()
     {
-		product temp_product;
+		Product temp_product;
 		int max_index = get_purchases();  
 		cout << customer_name <<" has $ "<<wallet <<" and Purchased: ";
 		if (get_purchases()!=0)
@@ -66,7 +66,7 @@ bool customer::buy_something (product items[])
 		for (int i=0;i<=max_index;i++)
 		  {
 		   temp_product = purchases[i];
-		   temp_product.print();
+		   cout << temp_product.m_name << "," ;
 		  }
 		}else
 		{
