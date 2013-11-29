@@ -45,25 +45,11 @@ using namespace std;
   
   void business::make_a_sale()
   {
-	  string item; //item name 
-	  float customer_wallet; //customer wallet amount 
-	  
-	  int index = (rand()% num_items); // random item being sold
-	  
-	  item = items[index]; // set to that item 
-	  for (int i=0; i< num_customers;i++) //selling item to every customer
-	  {
-		  
-		  customer_wallet = customers[i].getmoney(); // get cust. balance 
-		  if (customer_wallet >= SINGLE_PURCHASE_COST) 	  
-		  {
-			  customers[i].purchase(item);
-			  customers[i].subtract_money(SINGLE_PURCHASE_COST);
-			  total_cash = (total_cash + SINGLE_PURCHASE_COST);
-		  }
-  
-	  }
+    for (int i=0; i< num_customers;i++) //selling item to every customer
+	{
+      customers[i].buy_something(items);
 	}
+  }
   void business::get_items(string FileName)
   {
 	ifstream fin;
@@ -71,8 +57,12 @@ using namespace std;
     for (int i=0;i<num_items;i++)
 	{
 	  fin >> items[i].m_price;
-	  
+	  getline(fin,items[i].m_name);
 	}
     return;
   }
    
+  void customers_leave(customer customers[], int NumberCustomers)
+  {
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+  }

@@ -45,13 +45,13 @@ int main()
 	}
 	for(int i = 0; i < NumberCustomers;i++)
     {
-	  if(ArrayCustomers[i].GetInclination() == 1 && 
+	  if(ArrayCustomers[i].GetInclination() == "1" && 
         ArrayCustomers[i].GetHappiness() < MAX_HAPPINESS &&
         ArrayCustomers[i].GetHappiness() > MIN_HAPPINESS)
 	  {
 	    ComicBookStore.addCustomer(ArrayCustomers[i]);
 	  }
-	  if(ArrayCustomers[i].GetInclination() == -1 && 
+	  if(ArrayCustomers[i].GetInclination() == "-1" && 
 		  ArrayCustomers[i].GetHappiness() < MAX_HAPPINESS && 
 		  ArrayCustomers[i].GetHappiness() > MIN_HAPPINESS)
 	  {
