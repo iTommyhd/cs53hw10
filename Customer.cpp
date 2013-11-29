@@ -33,14 +33,14 @@ bool customer::buy_something (Product items[])
 			 }
 			 else
 			 {
-				 willPurchase = false; // purchase not successful
+				 willPurchase = false; // purchase not successful due to you got "got too many items"
 				 happiness = 2; //decrease happiness
 				 break;
 			 }
 		 }else 
 		 {
-			 willPurchase = false; // purchase not successful
-			 happiness = 2; // decrease happiness  //TOMMY,CHECK THIS, it doesn't make much sense to me, not sure if it's correct or not! I just don't understand same thing is done above!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			 willPurchase = false; // purchase not successful due to you "you broke"
+			 happiness = 2; // decrease happiness  
 			 break;
 		 }
 	 }
