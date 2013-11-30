@@ -62,7 +62,10 @@ using namespace std;
     return;
   }
    
-  void customers_leave(customer customers[], int NumberCustomers)
+  void business :: customers_leave(customer StreetCustomers[], int NumberCustomers)
   {
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+    for (int i = NumberCustomers-1; i < NumberCustomers + num_customers; i++)
+	{
+	  StreetCustomers[i]= Cust//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	}
   }
