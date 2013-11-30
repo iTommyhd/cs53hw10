@@ -2,6 +2,7 @@
 #include<fstream>
 #include "Main.h"
 #include "Business.h"
+#include "Customer.h"
 
 using namespace std;
 
@@ -64,8 +65,8 @@ int main()
 	  }
     }
     // Sells items to customers
-	MoesBar.sell_stuff();
-    ComicBookStore.sell_stuff();
+	MoesBar.make_a_sale();
+	ComicBookStore.make_a_sale();
 
 	// Customers leave bars and mingles in streets
     MoesBar.customers_leave(ArrayCustomers,NumberCustomers);

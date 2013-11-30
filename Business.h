@@ -48,7 +48,7 @@ class business
 	void make_a_sale();
 	customer leave_store(int index){return customers[index];}
 	void get_items(string FileName);
-	void customers_leave(customer StreetCustomers[], int NumberCustomers);
+	void customers_leave(customer StreetCustomers[], int & NumberCustomers);
 
   };
 

@@ -21,7 +21,7 @@ bool customer::buy_something (Product items[])
 	 {
 	 case 1: 
 		 temp_item =  ( items[item_purchase] ); 
-		 if (wallet>temp_item.price)
+		 if (wallet>temp_item.m_price)
 		 {
 			 if (total_purchases<20)
 			 {

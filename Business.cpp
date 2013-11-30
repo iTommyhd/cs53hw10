@@ -40,7 +40,7 @@ using namespace std;
    {
 	   
 	   customers[num_customers]=name_of_cust; 
-	   num_customers = (num_customers+1);
+	   num_customers += 1;
    }
   
   void business::make_a_sale()
@@ -62,10 +62,24 @@ using namespace std;
     return;
   }
    
-  void business :: customers_leave(customer StreetCustomers[], int NumberCustomers)
+  void business :: customers_leave(customer StreetCustomers[], int & NumberCustomers)
   {
+	customer temp1, temp2;
+	int n = 0;
+	int RandomSite;
     for (int i = NumberCustomers-1; i < NumberCustomers + num_customers; i++)
 	{
-	  StreetCustomers[i]= Cust//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	  StreetCustomers[i]= customers[n];
+	  n++;
 	}
+	NumberCustomers += num_customers;
+	for (int i = 0; i < NumberCustomers; i++)
+	{
+	  temp1 = StreetCustomers[i];
+	  RandomSite= rand()%(NumberCustomers);
+	  temp2 = StreetCustomers[RandomSite];
+	  StreetCustomers[i]= temp2;
+	  StreetCustomers[RandomSite]=temp1;
+	}
+	num_customers = 0;
   }
