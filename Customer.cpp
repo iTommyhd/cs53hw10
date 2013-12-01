@@ -16,6 +16,9 @@ bool customer::buy_something (Product items[])
 	 int item_purchase = (rand() % 10 ); // randomly chooses item from 0 to 10 
 	 int happiness; // happiness increase or decrease switch case 
 	 Product temp_item;
+
+	 happiness = 3;
+	 willPurchase = false;
 	 
 	 switch (purchase) 
 	 {
@@ -82,5 +85,5 @@ bool customer::buy_something (Product items[])
   }
   void Throw(customer& victum)
   {
-  return;
+    return;
   }
