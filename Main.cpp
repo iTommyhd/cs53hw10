@@ -28,9 +28,9 @@ int main()
 	getline(fin,TempInclination);
 	ArrayCustomers[i].change_name(TempName);
 	if(TempInclination == "1")
-	  ArrayCustomers[i].SetInclination(1);
+	  ArrayCustomers[i].SetInclination("1");
 	else if (TempInclination =="-1")
-      ArrayCustomers[i].SetInclination(-1);
+      ArrayCustomers[i].SetInclination("-1");
 	
   }
   fin.close();

@@ -56,21 +56,21 @@ bool customer::buy_something (Product items[])
 	 return willPurchase; //return check 
     }
 
-  void customer::print ()
-    {
-		Product temp_product;
-		int max_index = get_purchases();  
-		cout << customer_name <<" has $ "<<wallet <<" and Purchased: ";
-		if (get_purchases()!=0)
-		{ 
-		for (int i=0;i<=max_index;i++)
-		  {
-		   temp_product = purchases[i];
-		   cout << temp_product.m_name << "," ;
-		  }
-		}else
-		{
-			cout << "nothing";
-		}
-		cout<<endl;
-    }
+  ostream & operator <<(ostream& out, customer c1)
+  {
+	Product temp_product;
+	int max_index = c1.get_purchases();  
+	cout << c1.customer_name <<" has $ "<<c1.wallet <<" and Purchased: ";
+	if (c1.get_purchases() !=0)
+	{ 
+	  for (int i=0;i<=max_index;i++)
+	  {
+	    temp_product = c1.purchases[i];
+		cout << temp_product.m_name << "," ;
+	  }
+	}else
+	{
+	  cout << "nothing";
+	}
+	cout<<endl;
+  }

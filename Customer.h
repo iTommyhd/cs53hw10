@@ -68,10 +68,18 @@ using namespace std;
    //Pre:none 
    //Post: Return nothing  
    void SetInclination(string location){inclination = location;}
-   //Desc: Gets the product inclination
+   //Desc: gets the customer inclination
    //Pre:none 
    //returns: inclination (a string) 
    string GetInclination() {return inclination;}
+   //Desc: Gets the customers happiness
+   //Pre:none
+   //Post:returns an int happiness
+   int GetHappiness() {return happiness_level;}
+   //Desc:Prints a customer
+   //Pre :NONE
+   //POST: Returns an ostream
+   friend ostream & operator <<(ostream& out, customer c1);
 
    private:
 	 Product purchases [20]; // array for customer purchases 
