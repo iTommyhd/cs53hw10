@@ -80,6 +80,14 @@ using namespace std;
    //Pre :NONE
    //POST: Returns an ostream
    friend ostream & operator <<(ostream& out, customer c1);
+   //
+   //
+   //
+   void rob(customer& victum);
+   //
+   //
+   //
+   void Throw(customer& victum);
 
    private:
 	 Product purchases [20]; // array for customer purchases 
@@ -87,6 +95,6 @@ using namespace std;
 	 float wallet;           // balance 
 	 string customer_name;   // name 
 	 int happiness_level;    // level of happiness
-	 string inclination;     // location 
+	 string inclination;     // store preference 
    };
 #endif

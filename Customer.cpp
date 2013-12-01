@@ -60,17 +60,27 @@ bool customer::buy_something (Product items[])
   {
 	Product temp_product;
 	int max_index = c1.get_purchases();  
-	cout << c1.customer_name <<" has $ "<<c1.wallet <<" and Purchased: ";
+	out << c1.customer_name <<" has $ "<<c1.wallet <<" and Purchased: ";
 	if (c1.get_purchases() !=0)
 	{ 
 	  for (int i=0;i<=max_index;i++)
 	  {
 	    temp_product = c1.purchases[i];
-		cout << temp_product.m_name << "," ;
+		out << temp_product.m_name << "," ;
 	  }
 	}else
 	{
-	  cout << "nothing";
+	  out << "nothing";
 	}
 	cout<<endl;
+	return out;
+  }
+
+  void rob(customer& victum)
+  {
+    return;
+  }
+  void Throw(customer& victum)
+  {
+  return;
   }
