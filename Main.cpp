@@ -79,12 +79,12 @@ int main()
       IndexVictum = rand()%(NUMBER_CUSTOMERS+1);
 	  if(ArrayCustomers[i].GetInclination() == ArrayCustomers[IndexVictum].GetInclination())
 	  {
-        ArrayCustomers[i].rob(ArrayCustomers[IndexVictum]); // possibly incomplete-check
+        //ArrayCustomers[i].rob(ArrayCustomers[IndexVictum]); // possibly incomplete-check
 	  }
 
 	  else
 	  {
-	    ArrayCustomers[i].Throw(ArrayCustomers[IndexVictum]); // possibly incomplete - check
+	    //ArrayCustomers[i].Throw(ArrayCustomers[IndexVictum]); // possibly incomplete - check
 	  }
     }
   }
