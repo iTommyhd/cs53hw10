@@ -14,7 +14,9 @@
 using namespace std;
 
   const int  SINGLE_PURCHASE_COST = 40; //fix amount for transaction cost
-
+  const int THROW_SUCCESS_PERP = 5;
+  const int THROW_FAIL_PERP = -25;
+  const int THROW_VUCTUM = -20;
   struct Product
   {
 	  string m_name;
@@ -88,6 +90,10 @@ using namespace std;
    //
    //
    void ThrowItem(customer& victum);
+   //
+   //
+   //
+   void ChangeHappiness(const int ChangeAmmount);
 
    private:
 	 Product purchases [20]; // array for customer purchases 

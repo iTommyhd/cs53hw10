@@ -79,11 +79,27 @@ bool customer::buy_something (Product items[])
 	return out;
   }
 
-  void rob(customer& victum)
+  void customer :: rob(customer& victum)
   {
     return;
   }
-  void ThrowItem(customer& victum)
+  void customer:: ThrowItem(customer& victum)
   {
+	if (total_purchases > 0)
+	{
+	  total_purchases--;
+	  happiness_level += THROW_SUCCESS_PERP;
+	  victum.ChangeHappiness(THROW_VUCTUM);
+	}
+	else
+	{
+	  happiness_level+=THROW_FAIL_PERP;
+	}
+    return;
+  }
+
+  void customer :: ChangeHappiness(const int ChangeAmmount)
+  {
+    happiness_level+=ChangeAmmount;
     return;
   }
