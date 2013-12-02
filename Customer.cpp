@@ -83,7 +83,7 @@ bool customer::buy_something (Product items[])
   void customer :: rob(customer& victum)
   {
 	Product temp;
-	if (total_purchases < MAX_NUMBER_PURCHASES && victum.get_purchases >0)
+	if (total_purchases < MAX_NUMBER_PURCHASES && victum.total_purchases >0)
 	{
 	  victum.total_purchases--;
 	  temp = victum.purchases[victum.total_purchases];
