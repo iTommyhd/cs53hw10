@@ -51,17 +51,20 @@ int main()
         ArrayCustomers[i].GetHappiness() > MIN_HAPPINESS)
 	  {
 	    ComicBookStore.addCustomer(ArrayCustomers[i]);
+		NumberCustomers--;
 	  }
 	  if(ArrayCustomers[i].GetInclination() == "-1" && 
 		  ArrayCustomers[i].GetHappiness() < MAX_HAPPINESS && 
 		  ArrayCustomers[i].GetHappiness() > MIN_HAPPINESS)
 	  {
         MoesBar.addCustomer(ArrayCustomers[i]);
+		NumberCustomers--;
       }
 	  else
 	  {
 	    cout << ArrayCustomers[i].get_name() << "Has made it to ShelbyVille"
         <<" on round " << Cycles << "."<< endl;
+		NumberCustomers--;
 	  }
     }
     // Sells items to customers

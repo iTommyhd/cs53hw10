@@ -53,7 +53,7 @@ using namespace std;
   void business::get_items(string FileName)
   {
 	ifstream fin;
-	fin.open(FileName);
+	fin.open(FileName.c_str());
     for (int i=0;i<num_items;i++)
 	{
 	  fin >> items[i].m_price;
