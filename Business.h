@@ -13,7 +13,7 @@
 using namespace std;
 
 const int NUMBER_ITEMS_IN_STORE = 10;
-const int NUMBER_CUSTOMERS_IN_STORE=10;
+const int NUMBER_CUSTOMERS_IN_STORE=20;
 
 
 
