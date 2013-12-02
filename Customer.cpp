@@ -95,7 +95,7 @@ bool customer::buy_something (Product items[])
 	  {
 	    happiness_level=0;
 		cout << customer_name <<" has been caught by the cops and sent to the "
-		<< "Shelbyville prison!";
+		<< "Shelbyville prison!" << endl;
 	  }
 	}
 	else
