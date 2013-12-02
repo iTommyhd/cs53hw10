@@ -89,6 +89,7 @@ int main()
 	    ArrayCustomers[i].ThrowItem(ArrayCustomers[IndexVictum]); // possibly incomplete - check
 	  }
     }
+	Cycles++;
   }
   cout << "The winner(s) of living in springfield is(are)!!!!!!  " << endl
 	  << "***LOTS OF DRUMROLLS AND FIREWORKS AND OTHER COOL STUFF***" << endl;
