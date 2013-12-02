@@ -84,7 +84,7 @@ int main()
 
 	  else
 	  {
-	    //ArrayCustomers[i].Throw(ArrayCustomers[IndexVictum]); // possibly incomplete - check
+	    //ArrayCustomers[i].ThrowItem(ArrayCustomers[IndexVictum]); // possibly incomplete - check
 	  }
     }
   }

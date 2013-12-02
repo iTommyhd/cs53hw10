@@ -83,7 +83,7 @@ bool customer::buy_something (Product items[])
   {
     return;
   }
-  void Throw(customer& victum)
+  void ThrowItem(customer& victum)
   {
     return;
   }

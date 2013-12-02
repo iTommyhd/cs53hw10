@@ -87,7 +87,7 @@ using namespace std;
    //
    //
    //
-   void Throw(customer& victum);
+   void ThrowItem(customer& victum);
 
    private:
 	 Product purchases [20]; // array for customer purchases 
