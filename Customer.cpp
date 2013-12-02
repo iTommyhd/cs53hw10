@@ -5,6 +5,7 @@
 // Description: Customer Class Functions
 
 #include "Customer.h"
+#include "Main.h"
 #include <iostream>
 using namespace std;
 

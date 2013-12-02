@@ -78,7 +78,7 @@ int main()
 	// all happiness modifications should be done in functions
 	for(int i = 0;i<NUMBER_CUSTOMERS;i++)
     {
-      IndexVictum = rand()%(NUMBER_CUSTOMERS+1);
+      IndexVictum = rand()%(NUMBER_CUSTOMERS);
 	  if(ArrayCustomers[i].GetInclination() == ArrayCustomers[IndexVictum].GetInclination())
 	  {
         ArrayCustomers[i].rob(ArrayCustomers[IndexVictum]); // possibly incomplete-check

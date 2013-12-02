@@ -7,6 +7,7 @@
 #ifndef	BUSINESS_H
 #define BUSINESS_H
 #include "Customer.h"
+#include "Main.h"
 #include <fstream>
 #include <string>
 #include <iostream>

@@ -4,6 +4,9 @@
 
 
 #include<fstream>
+#include <cstdlib>
+#include <cstring>
+#include <string>
 using namespace std;
 
 const int NUMBER_CUSTOMERS = 20;
