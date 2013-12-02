@@ -22,7 +22,6 @@ int main()
   // Defines the customers in the array
   for (int i = 0; i < NUMBER_CUSTOMERS;i++)
   {
-    //fin >> TempName;
 	getline(fin,TempName,',');
 	fin.ignore(30,' ');
 	getline(fin,TempInclination);
@@ -82,17 +81,17 @@ int main()
       IndexVictum = rand()%(NUMBER_CUSTOMERS+1);
 	  if(ArrayCustomers[i].GetInclination() == ArrayCustomers[IndexVictum].GetInclination())
 	  {
-        //ArrayCustomers[i].rob(ArrayCustomers[IndexVictum]); // possibly incomplete-check
+        ArrayCustomers[i].rob(ArrayCustomers[IndexVictum]); // possibly incomplete-check
 	  }
 
 	  else
 	  {
-	    //ArrayCustomers[i].ThrowItem(ArrayCustomers[IndexVictum]); // possibly incomplete - check
+	    ArrayCustomers[i].ThrowItem(ArrayCustomers[IndexVictum]); // possibly incomplete - check
 	  }
     }
   }
-  cout << "The winner(s) of living in springfield are!!!!!!  " << endl
-	  << "***LOTS OF DRUMROLLS AND FIREEWORKS AND OTHER COOL STUFF***" << endl;
+  cout << "The winner(s) of living in springfield is(are)!!!!!!  " << endl
+	  << "***LOTS OF DRUMROLLS AND FIREWORKS AND OTHER COOL STUFF***" << endl;
   for (int i = 0; i < NumberCustomers;i++)
   {
     cout << ArrayCustomers[i] << endl;

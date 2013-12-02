@@ -13,10 +13,13 @@
 #include <ctime>
 using namespace std;
 
-  const int  SINGLE_PURCHASE_COST = 40; //fix amount for transaction cost
   const int THROW_SUCCESS_PERP = 5;
   const int THROW_FAIL_PERP = -25;
   const int THROW_VUCTUM = -20;
+  const int ROB_SUCCESS_PERP=25;
+  const int ROB_FAIL_PERP=-5;
+  const int ROB_SUCCESS_VICTUM=-20;
+  const int MAX_NUMBER_PURCHASES = 20;
   struct Product
   {
 	  string m_name;
@@ -96,7 +99,7 @@ using namespace std;
    void ChangeHappiness(const int ChangeAmmount);
 
    private:
-	 Product purchases [20]; // array for customer purchases 
+     Product purchases [MAX_NUMBER_PURCHASES]; // array for customer purchases 
 	 short total_purchases;  // total number of purchases 
 	 float wallet;           // balance 
 	 string customer_name;   // name 

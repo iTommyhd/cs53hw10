@@ -40,7 +40,8 @@ bool customer::buy_something (Product items[])
 				 happiness = 2; //decrease happiness
 				 break;
 			 }
-		 }else 
+		 }
+		 else 
 		 {
 			 willPurchase = false; // purchase not successful due to you "you broke"
 			 happiness = 2; // decrease happiness  
@@ -81,6 +82,26 @@ bool customer::buy_something (Product items[])
 
   void customer :: rob(customer& victum)
   {
+	Product temp;
+	if (total_purchases < MAX_NUMBER_PURCHASES && victum.get_purchases >0)
+	{
+	  victum.total_purchases--;
+	  temp = victum.purchases[victum.total_purchases];
+	  purchases[total_purchases]=temp;
+	  total_purchases++;
+	  happiness_level += ROB_SUCCESS_PERP;
+	  victum.happiness_level+= ROB_SUCCESS_VICTUM;
+	  if(rand()%11 ==1)
+	  {
+	    happiness_level=0;
+		cout << customer_name <<" has been caught by the cops and sent to the "
+		<< "Shelbyville prison!";
+	  }
+	}
+	else
+	{
+	  happiness_level+=ROB_FAIL_PERP;
+	}
     return;
   }
   void customer:: ThrowItem(customer& victum)
