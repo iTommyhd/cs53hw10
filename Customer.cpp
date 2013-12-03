@@ -11,7 +11,7 @@ using namespace std;
 
 bool customer::buy_something (Product items[])
     {
-	 int purchase = (rand() % 2 + 1 ); // 50/50 chance for purchase   
+	 int purchase = (/*rand() % 2 +*/ 1 ); // 50/50 chance for purchase   
 	 bool willPurchase;  
 	 int index = get_purchases(); //current purchases total to start in the array
 	 int item_purchase = (rand() % 10 ); // randomly chooses item from 0 to 10 
@@ -33,6 +33,9 @@ bool customer::buy_something (Product items[])
 			 cout << " bought "<<temp_item.m_name <<"for $"<<temp_item.m_price<<endl;
 			 total_purchases = (total_purchases +1); // update total purchases 
 			 willPurchase = true; // purchase successful 
+			 wallet = (wallet - temp_item.m_price);
+			 cout << customer_name << "Has purchased "<< temp_item.m_name 
+				  << " for $" << temp_item.m_price << endl;
 			 happiness = 1; // increase happiness 
 			 break;
 			 }
@@ -66,10 +69,16 @@ bool customer::buy_something (Product items[])
   {
 	Product temp_product;
 	int max_index = c1.get_purchases();  
+<<<<<<< HEAD
 	out << c1.customer_name <<"  has $"<<c1.wallet <<" and Purchased: ";
 	if (c1.get_purchases() > 0)
+=======
+	out << c1.customer_name<<"  has $"<<c1.wallet <<" and Purchased: ";
+	
+	if (c1.get_purchases() !=0)
+>>>>>>> Fixed a ton of stuff
 	{ 
-	  for (int i=0;i<=max_index;i++)
+	  for (int i=0;i<max_index;i++)
 	  {
 	    temp_product = c1.purchases[i];
 		out << temp_product.m_name << "," ;
@@ -93,6 +102,8 @@ bool customer::buy_something (Product items[])
 	  total_purchases++;
 	  happiness_level += ROB_SUCCESS_PERP;
 	  victum.happiness_level+= ROB_SUCCESS_VICTUM;
+	  cout << customer_name << "Has robbed" << victum.get_name() 
+		   <<" and got a " << temp.m_name << endl;
 	  if(rand()%11 ==1)
 	  {
 	    happiness_level=0;
@@ -113,6 +124,8 @@ bool customer::buy_something (Product items[])
 	  total_purchases--;
 	  happiness_level += THROW_SUCCESS_PERP;
 	  victum.ChangeHappiness(THROW_VUCTUM);
+	  cout << customer_name << " has thrown an item at " 
+		   << victum.get_name()<< endl;
 	}
 	else
 	{

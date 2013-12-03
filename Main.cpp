@@ -34,6 +34,9 @@ int main()
   }
   fin.close();
 
+  MoesBar.get_items(MOES_SUPPLIER);
+  ComicBookStore.get_items(COMIC_BOOOK_SUPPLIER);
+
   while(Cycles <= MAX_CYCLES && NumberCustomers > 1)
   {
     // Enters the customers into their appropriate stores
@@ -44,17 +47,17 @@ int main()
 	  cout << ArrayCustomers[i] << endl;
 	}
 	for(int i = 0; i < NumberCustomers;i++)
-	{
-	  if((ArrayCustomers[i].GetInclination() == "1") && 
-        (ArrayCustomers[i].GetHappiness() < MAX_HAPPINESS )&&
-        (ArrayCustomers[i].GetHappiness() > MIN_HAPPINESS))
+    {
+	  if(ArrayCustomers[i].GetInclination() == "1" && 
+        ArrayCustomers[i].GetHappiness() < MAX_HAPPINESS &&
+        ArrayCustomers[i].GetHappiness() > MIN_HAPPINESS)
 	  {
 	    ComicBookStore.addCustomer(ArrayCustomers[i]);
 		NumberCustomers--;
 	  }
-	  if((ArrayCustomers[i].GetInclination() == "-1" )&& 
-		  (ArrayCustomers[i].GetHappiness() < MAX_HAPPINESS) && 
-		  (ArrayCustomers[i].GetHappiness() > MIN_HAPPINESS))
+	  else if(ArrayCustomers[i].GetInclination() == "-1" && 
+		ArrayCustomers[i].GetHappiness() < MAX_HAPPINESS && 
+		ArrayCustomers[i].GetHappiness() > MIN_HAPPINESS)
 	  {
         MoesBar.addCustomer(ArrayCustomers[i]);
 		NumberCustomers--;

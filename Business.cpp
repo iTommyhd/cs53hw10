@@ -59,6 +59,8 @@ using namespace std;
 	{
 	  fin >> items[i].m_price;
 	  getline(fin,items[i].m_name);
+	  //cout << items[i].m_price;
+	  //cout << items[i].m_name;
 	}
     return;
   }

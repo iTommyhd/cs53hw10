@@ -15,6 +15,7 @@ using namespace std;
 
 const int NUMBER_ITEMS_IN_STORE = 10;
 const int NUMBER_CUSTOMERS_IN_STORE=20;
+const int NUMBER_ITEMS = 6;
 
 
 
@@ -30,9 +31,10 @@ class business
 	customer customers[NUMBER_CUSTOMERS_IN_STORE]; // customers in bussiness
 
   public:
-    business():business_name(),total_cash(0),num_items(0),num_customers(0) 
+    business():business_name(),total_cash(0),num_items(NUMBER_ITEMS)
+		                      ,num_customers(0) 
 	{
-	  num_items = 0;
+	  num_items = NUMBER_ITEMS;
 	  num_customers = 0;
 	  total_cash = 0;
 	}
