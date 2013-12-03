@@ -29,7 +29,8 @@ bool customer::buy_something (Product items[])
 		 {
 			 if (total_purchases<20)
 			 {
-			 purchases[index] = temp_item ;  //add item to array 
+			 purchases[index] = temp_item ;  //add item to array
+			 cout << " bought "<<temp_item.m_name <<"for $"<<temp_item.m_price<<endl;
 			 total_purchases = (total_purchases +1); // update total purchases 
 			 willPurchase = true; // purchase successful 
 			 happiness = 1; // increase happiness 
@@ -66,7 +67,7 @@ bool customer::buy_something (Product items[])
 	Product temp_product;
 	int max_index = c1.get_purchases();  
 	out << c1.customer_name <<"  has $"<<c1.wallet <<" and Purchased: ";
-	if (c1.get_purchases() !=0)
+	if (c1.get_purchases() > 0)
 	{ 
 	  for (int i=0;i<=max_index;i++)
 	  {

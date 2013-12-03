@@ -95,7 +95,7 @@ int main()
 	  << "***LOTS OF DRUMROLLS AND FIREWORKS AND OTHER COOL STUFF***" << endl;
   for (int i = 0; i < NumberCustomers;i++)
   {
-    cout << ArrayCustomers[i] << endl;
+	  cout << ArrayCustomers[i]<< endl;
   }
   cin >> TempInclination;  //  This is just as a pause, delete before submition
   return(0); 
