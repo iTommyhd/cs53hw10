@@ -68,7 +68,9 @@ int main()
         <<" on round " << Cycles << "."<< endl;
 		NumberCustomers--;
 	  }
+	  
     }
+	NumberCustomers = 1; // redundant, but effective
     // Sells items to customers
 	MoesBar.make_a_sale();
 	ComicBookStore.make_a_sale();
