@@ -1,5 +1,5 @@
-// Name: Tommy Duong
-// Date: Nov. 10 2013
+// Name: Tommy Duong, Josey Stevens, Katherine Overend
+// Date: 12-3-13
 // Class: CS53
 // Section: C
 // Description: Customer Class Functions
