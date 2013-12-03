@@ -69,14 +69,11 @@ bool customer::buy_something (Product items[])
   {
 	Product temp_product;
 	int max_index = c1.get_purchases();  
-<<<<<<< HEAD
 	out << c1.customer_name <<"  has $"<<c1.wallet <<" and Purchased: ";
 	if (c1.get_purchases() > 0)
-=======
 	out << c1.customer_name<<"  has $"<<c1.wallet <<" and Purchased: ";
 	
 	if (c1.get_purchases() !=0)
->>>>>>> Fixed a ton of stuff
 	{ 
 	  for (int i=0;i<max_index;i++)
 	  {
