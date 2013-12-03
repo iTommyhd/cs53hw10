@@ -1,9 +1,13 @@
+// Name: Tommy Duong, Josey Stevens, Katherine Overend
+// Date: Nov. 10 2013
+// Class: CS53
+// Section: C
+// Description: Main Constant Variables
+
 #ifndef MAIN_H
 #define MAIN_H
 
-
-
-#include<fstream>
+#include <fstream>
 #include <cstdlib>
 #include <cstring>
 #include <string>
@@ -16,6 +20,5 @@ const int MAX_HAPPINESS = 90;
 const int MIN_HAPPINESS = 10;
 const string MOES_SUPPLIER = "MoesBarItems.dat";
 const string COMIC_BOOOK_SUPPLIER = "CBCItems.dat";
-
 
 #endif
